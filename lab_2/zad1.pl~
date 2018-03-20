@@ -1,0 +1,10 @@
+middle([X],X).
+
+middle([_|T],X):-
+    removeLast(T,TWithoutLast),
+    middle(TWithoutLast,X).
+
+removeLast([_],[]).
+
+removeLast([H|T],[H|TailWithoutLast]):-
+    removeLast(T,TailWithoutLast).
